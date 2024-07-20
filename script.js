@@ -1,36 +1,35 @@
-var produk = ["Kue Lumpur", undefined, "Kue Sus"];
-var tambahProduk = function (namaProduk, produk) {
-  if (produk.length == 0) {
-    produk.push(namaProduk);
-    return produk;
+var menu = ["Kue Lumpur", undefined, "Kue Sus"];
+var tambahProduk = function (namaProduk) {
+  if (menu.length == 0) {
+    menu.push(namaProduk);
+    return menu;
   } else {
-    for (let i = 0; i < produk.length; i++) {
-      if (produk[i] == undefined) {
-        produk[i] = namaProduk;
-        return produk;
-      } else if (produk[i] == namaProduk) {
+    for (let i = 0; i < menu.length; i++) {
+      if (menu[i] == undefined) {
+        menu[i] = namaProduk;
+        return menu;
+      } else if (menu[i] == namaProduk) {
         console.log(namaProduk + " sudah ada di dalam slot");
-        return produk;
-      } else if (i == produk.length - 1) {
-        produk.push(namaProduk);
-        return produk;
+        return menu;
+      } else if (i == menu.length - 1) {
+        menu.push(namaProduk);
+        return menu;
       }
     }
   }
 };
-
-var jualProduk = function (namaProduk, produk) {
-  if (produk.length == 0) {
-    console.log("Slot masih Kosong.");
-    return produk;
+var hapusProduk = function (namaProduk) {
+  if (menu.length == 0) {
+    console.log("Menu masih Kosong.");
+    return menu;
   } else {
-    for (let i = 0; i < produk.length; i++) {
-      if (produk[i] == namaProduk) {
-        produk[i] = undefined;
-        return produk;
-      } else if (i == produk.length - 1) {
-        console.log(namaProduk + " tidak ada di dalam Slot Produk.");
-        return produk;
+    for (let i = 0; i < menu.length; i++) {
+      if (menu[i] == namaProduk) {
+        menu[i] = undefined;
+        return menu;
+      } else if (i == menu.length - 1) {
+        console.log(namaProduk + " tidak ada di Menu.");
+        return menu;
       }
     }
   }
