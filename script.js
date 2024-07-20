@@ -20,16 +20,18 @@ var tambahProduk = function (namaProduk, produk) {
 };
 
 var jualProduk = function (namaProduk, produk) {
-  // jika slot kosong
-  //   tampilkan pesan bahwa slot kosong, dan
-  //   tidak mungkin ada jual produk
-  //   kembalikan isi array & keluar dari function
-  // else
-  //   telusuri seluruh slot dari awal
-  //    jika produk sesuai
-  //        hapus produk dengan mengubah namanya menjadi undefined
-  //        kembalikan isi array & keluar dari function
-  //    jika tidak ada nama yang sesuai
-  //        tampilkan pesan kesalahannya
-  //        kembalikan isi array & keluar dari function
+  if (produk.length == 0) {
+    console.log("Slot masih Kosong.");
+    return produk;
+  } else {
+    for (let i = 0; i < produk.length; i++) {
+      if (produk[i] == namaProduk) {
+        produk[i] = undefined;
+        return produk;
+      } else if (i == produk.length - 1) {
+        console.log(namaProduk + " tidak ada di dalam Slot Produk.");
+        return produk;
+      }
+    }
+  }
 };
